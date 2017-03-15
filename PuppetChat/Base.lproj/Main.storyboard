@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Puppet Chat-->
         <scene sceneID="GJO-Zm-QEi">
             <objects>
                 <tableViewController id="qmr-y3-R4h" customClass="PCClientTableViewController" sceneMemberID="viewController">
@@ -142,7 +142,7 @@
                             <outlet property="delegate" destination="qmr-y3-R4h" id="lc5-qP-Jri"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="2KT-vf-X0s">
+                    <navigationItem key="navigationItem" title="Puppet Chat" id="2KT-vf-X0s">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="PPa-Fz-2YF"/>
                         <barButtonItem key="rightBarButtonItem" title="Chat" style="done" id="Oal-xm-Vn1"/>
                     </navigationItem>
