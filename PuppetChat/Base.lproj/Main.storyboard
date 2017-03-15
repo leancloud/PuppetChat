@@ -63,6 +63,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <state key="normal" title="Login"/>
+                                            <connections>
+                                                <action selector="loginButtonDidClick:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="2ku-CI-Fqd"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1d-gN-i6b">
                                             <rect key="frame" x="275" y="131" width="95" height="30"/>
@@ -71,6 +74,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <state key="normal" title="Forced Login"/>
+                                            <connections>
+                                                <action selector="forcedLoginButtonDidClick:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="AVr-YS-hKr"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llc-bi-GFc">
                                             <rect key="frame" x="318" y="161" width="51" height="30"/>
@@ -81,6 +87,9 @@
                                             <state key="normal" title="Logout">
                                                 <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="logoutButtonDidClick:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="Fde-6c-2oe"/>
+                                            </connections>
                                         </button>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ID" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQI-YM-GHm">
                                             <rect key="frame" x="92" y="8" width="275" height="25"/>

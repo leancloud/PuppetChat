@@ -15,6 +15,21 @@
     // Initialization code
 }
 
+- (IBAction)loginButtonDidClick:(id)sender {
+    if (self.loginAction)
+        self.loginAction(self);
+}
+
+- (IBAction)forcedLoginButtonDidClick:(id)sender {
+    if (self.forcedLoginAction)
+        self.forcedLoginAction(self);
+}
+
+- (IBAction)logoutButtonDidClick:(id)sender {
+    if (self.logoutAction)
+        self.logoutAction(self);
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

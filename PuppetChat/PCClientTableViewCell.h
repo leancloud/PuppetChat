@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class PCClientTableViewCell;
+
+typedef void(^PCClientAction)(PCClientTableViewCell *clientTableViewCell);
+
 @interface PCClientTableViewCell : UITableViewCell
+
+@property (nonatomic, copy) PCClientAction loginAction;
+@property (nonatomic, copy) PCClientAction forcedLoginAction;
+@property (nonatomic, copy) PCClientAction logoutAction;
 
 @end
