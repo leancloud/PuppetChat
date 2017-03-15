@@ -152,7 +152,9 @@
                             <outlet property="delegate" destination="qmr-y3-R4h" id="lc5-qP-Jri"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="2KT-vf-X0s"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="2KT-vf-X0s">
+                        <barButtonItem key="rightBarButtonItem" title="Chat" style="done" id="Oal-xm-Vn1"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuX-UU-Szm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
