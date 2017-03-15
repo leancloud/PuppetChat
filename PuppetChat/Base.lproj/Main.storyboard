@@ -189,7 +189,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Puppet Chat" id="2KT-vf-X0s">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="PPa-Fz-2YF"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add puppet" id="PPa-Fz-2YF"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuX-UU-Szm" userLabel="First Responder" sceneMemberID="firstResponder"/>
