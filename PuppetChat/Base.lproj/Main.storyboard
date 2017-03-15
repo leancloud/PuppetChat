@@ -190,7 +190,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Puppet Chat" id="2KT-vf-X0s">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="PPa-Fz-2YF"/>
-                        <barButtonItem key="rightBarButtonItem" title="Chat" style="done" id="Oal-xm-Vn1"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuX-UU-Szm" userLabel="First Responder" sceneMemberID="firstResponder"/>
