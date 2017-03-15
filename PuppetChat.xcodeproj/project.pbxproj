@@ -15,6 +15,7 @@
 		83A125B81E78EA3E00D1A465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A125B61E78EA3E00D1A465 /* LaunchScreen.storyboard */; };
 		83A125C31E78EA3E00D1A465 /* PuppetChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125C21E78EA3E00D1A465 /* PuppetChatTests.m */; };
 		83A125CF1E792AA500D1A465 /* PCClientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125CE1E792AA500D1A465 /* PCClientTableViewCell.m */; };
+		83A125D31E792FD900D1A465 /* PCClientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125D21E792FD900D1A465 /* PCClientTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		83A125C41E78EA3E00D1A465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83A125CD1E792AA500D1A465 /* PCClientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCClientTableViewCell.h; sourceTree = "<group>"; };
 		83A125CE1E792AA500D1A465 /* PCClientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCClientTableViewCell.m; sourceTree = "<group>"; };
+		83A125D11E792FD900D1A465 /* PCClientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCClientTableViewController.h; sourceTree = "<group>"; };
+		83A125D21E792FD900D1A465 /* PCClientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCClientTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				83A125AC1E78EA3E00D1A465 /* AppDelegate.m */,
 				83A125AE1E78EA3E00D1A465 /* ViewController.h */,
 				83A125AF1E78EA3E00D1A465 /* ViewController.m */,
+				83A125D11E792FD900D1A465 /* PCClientTableViewController.h */,
+				83A125D21E792FD900D1A465 /* PCClientTableViewController.m */,
 				83A125CD1E792AA500D1A465 /* PCClientTableViewCell.h */,
 				83A125CE1E792AA500D1A465 /* PCClientTableViewCell.m */,
 				83A125B11E78EA3E00D1A465 /* Main.storyboard */,
@@ -224,6 +229,7 @@
 				83A125AD1E78EA3E00D1A465 /* AppDelegate.m in Sources */,
 				83A125AA1E78EA3E00D1A465 /* main.m in Sources */,
 				83A125CF1E792AA500D1A465 /* PCClientTableViewCell.m in Sources */,
+				83A125D31E792FD900D1A465 /* PCClientTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +430,7 @@
 				83A125C91E78EA3E00D1A465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83A125CA1E78EA3E00D1A465 /* Build configuration list for PBXNativeTarget "PuppetChatTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				83A125CC1E78EA3E00D1A465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
