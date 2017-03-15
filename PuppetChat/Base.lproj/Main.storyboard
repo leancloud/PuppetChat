@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,16 +19,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Creator" id="tir-bs-Kcv">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Creator" rowHeight="100" id="tir-bs-Kcv">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tir-bs-Kcv" id="XNI-LB-zEW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Client ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hM-FR-vEv">
+                                            <rect key="frame" x="15" y="18" width="352" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="OC6-RM-9vw"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Single Login Tag" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fx3-4K-eti">
+                                            <rect key="frame" x="15" y="58" width="236.5" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="m3c-VK-YCF"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Force" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8n-ZG-euZ">
+                                            <rect key="frame" x="266.5" y="58" width="36.5" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="kgr-0w-rXo"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzW-6o-m14">
+                                            <rect key="frame" x="318" y="55" width="51" height="31"/>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wzW-6o-m14" firstAttribute="centerY" secondItem="fx3-4K-eti" secondAttribute="centerY" id="1Fh-cw-eRu"/>
+                                        <constraint firstItem="fx3-4K-eti" firstAttribute="leading" secondItem="XNI-LB-zEW" secondAttribute="leading" constant="15" id="6Dn-w5-3hf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wzW-6o-m14" secondAttribute="trailing" id="BFC-m5-sWW"/>
+                                        <constraint firstItem="fx3-4K-eti" firstAttribute="top" secondItem="2hM-FR-vEv" secondAttribute="bottom" constant="15" id="K68-dw-muR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2hM-FR-vEv" secondAttribute="trailing" id="dWp-Jm-78W"/>
+                                        <constraint firstItem="2hM-FR-vEv" firstAttribute="leading" secondItem="XNI-LB-zEW" secondAttribute="leading" constant="15" id="dnN-AJ-qot"/>
+                                        <constraint firstItem="g8n-ZG-euZ" firstAttribute="centerY" secondItem="fx3-4K-eti" secondAttribute="centerY" id="eGP-i4-o04"/>
+                                        <constraint firstItem="g8n-ZG-euZ" firstAttribute="leading" secondItem="fx3-4K-eti" secondAttribute="trailing" constant="15" id="fPY-a2-Mh3"/>
+                                        <constraint firstItem="2hM-FR-vEv" firstAttribute="top" secondItem="XNI-LB-zEW" secondAttribute="topMargin" constant="10" id="ut3-SU-qNp"/>
+                                        <constraint firstItem="wzW-6o-m14" firstAttribute="leading" secondItem="g8n-ZG-euZ" secondAttribute="trailing" constant="15" id="zJf-iT-QjX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Other" id="S5G-Yf-pXF">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S5G-Yf-pXF" id="nrr-Nh-Hz2">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -44,7 +89,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuX-UU-Szm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="124"/>
+            <point key="canvasLocation" x="1092" y="123.68815592203899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T1U-p1-fZq">
