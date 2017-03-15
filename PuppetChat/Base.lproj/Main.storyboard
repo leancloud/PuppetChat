@@ -153,6 +153,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="2KT-vf-X0s">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="PPa-Fz-2YF"/>
                         <barButtonItem key="rightBarButtonItem" title="Chat" style="done" id="Oal-xm-Vn1"/>
                     </navigationItem>
                 </tableViewController>
