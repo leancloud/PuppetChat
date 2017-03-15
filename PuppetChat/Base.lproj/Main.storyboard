@@ -129,23 +129,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Add" id="hpY-bb-b1r">
-                                <rect key="frame" x="0.0" y="228" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hpY-bb-b1r" id="ec2-k7-fUw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2i-bb-0AB">
-                                            <rect key="frame" x="176" y="10" width="22" height="22"/>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="A2i-bb-0AB" firstAttribute="centerX" secondItem="ec2-k7-fUw" secondAttribute="centerX" id="85G-yE-Wpg"/>
-                                        <constraint firstItem="A2i-bb-0AB" firstAttribute="centerY" secondItem="ec2-k7-fUw" secondAttribute="centerY" id="tQL-u8-Dhv"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="qmr-y3-R4h" id="xxS-JA-yFO"/>
