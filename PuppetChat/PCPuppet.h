@@ -15,6 +15,7 @@
 @property (nonatomic, assign)               BOOL         forcedLogin;
 @property (nonatomic, assign)               BOOL         uniqueConversation;
 @property (nonatomic, assign)               BOOL         transientConversation;
+@property (nonatomic,   copy, readonly)     NSString    *statusDescription;
 
 - (instancetype)initWithPuppetId:(NSString *)puppetId;
 

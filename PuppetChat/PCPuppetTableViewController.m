@@ -67,6 +67,8 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PCPuppetTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:PCPuppetCellReuseIdentifier
                                                                        forIndexPath:indexPath];
+    PCPuppet *puppet = self.puppets[indexPath.row];
+    cell.puppet = puppet;
     return cell;
 }
 
@@ -74,7 +76,7 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
     return 370;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
 }
 

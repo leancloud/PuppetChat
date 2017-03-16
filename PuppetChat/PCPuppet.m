@@ -34,4 +34,8 @@
     return self;
 }
 
+- (NSString *)statusDescription {
+    return @"Unknown";
+}
+
 @end

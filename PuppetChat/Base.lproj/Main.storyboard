@@ -84,7 +84,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-Ze-pr6">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-Ze-pr6">
                                             <rect key="frame" x="145" y="183" width="217" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -188,6 +188,14 @@
                                         <constraint firstItem="EX7-eE-yNI" firstAttribute="trailing" secondItem="Che-nR-lGh" secondAttribute="trailing" id="z2g-iN-nat"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="forcedLoginSwitch" destination="Qn3-rB-VQ4" id="U7Y-7k-gIC"/>
+                                    <outlet property="puppetIdTextField" destination="UQI-YM-GHm" id="sSW-Wf-oh5"/>
+                                    <outlet property="puppetStatusLabel" destination="Iib-Ze-pr6" id="W24-Jk-YVQ"/>
+                                    <outlet property="singleLoginTagTextField" destination="NJQ-TU-Eti" id="vP8-nG-zd0"/>
+                                    <outlet property="transientConversationSwitch" destination="rOY-eb-pjg" id="oOb-1t-kRc"/>
+                                    <outlet property="uniqueConversationSwitch" destination="9LX-tB-uE5" id="oGg-hs-I7Y"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
