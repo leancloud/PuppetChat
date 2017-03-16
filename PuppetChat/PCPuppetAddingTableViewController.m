@@ -24,8 +24,16 @@
     [self.puppetIdTextField becomeFirstResponder];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.view endEditing:YES];
+}
+
 - (IBAction)done:(UIBarButtonItem *)sender {
     [self finish];
+}
+
+- (IBAction)cancel:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -61,8 +69,6 @@
     NSString *puppetId = self.puppetIdTextField.text;
 
     PCPuppet *puppet = [[PCPuppet alloc] initWithPuppetId:puppetId];
-
-    [self.puppetIdTextField resignFirstResponder];
 
     [self dismissViewControllerAnimated:YES completion:^{
         if (self.puppetCreatedBlock)
