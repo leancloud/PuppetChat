@@ -74,4 +74,8 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
     return 370;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
+}
+
 @end
