@@ -1,18 +1,18 @@
 //
-//  PCClientTableViewController.m
+//  PCPuppetTableViewController.m
 //  PuppetChat
 //
 //  Created by Tang Tianyong on 3/15/17.
 //  Copyright © 2017 Tianyong Tang. All rights reserved.
 //
 
-#import "PCClientTableViewController.h"
+#import "PCPuppetTableViewController.h"
 
-@interface PCClientTableViewController ()
+@interface PCPuppetTableViewController ()
 
 @end
 
-@implementation PCClientTableViewController
+@implementation PCPuppetTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

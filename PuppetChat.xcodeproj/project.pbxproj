@@ -14,8 +14,8 @@
 		83A125B51E78EA3E00D1A465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A125B41E78EA3E00D1A465 /* Assets.xcassets */; };
 		83A125B81E78EA3E00D1A465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A125B61E78EA3E00D1A465 /* LaunchScreen.storyboard */; };
 		83A125C31E78EA3E00D1A465 /* PuppetChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125C21E78EA3E00D1A465 /* PuppetChatTests.m */; };
-		83A125CF1E792AA500D1A465 /* PCClientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125CE1E792AA500D1A465 /* PCClientTableViewCell.m */; };
-		83A125D31E792FD900D1A465 /* PCClientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125D21E792FD900D1A465 /* PCClientTableViewController.m */; };
+		83A125CF1E792AA500D1A465 /* PCPuppetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125CE1E792AA500D1A465 /* PCPuppetTableViewCell.m */; };
+		83A125D31E792FD900D1A465 /* PCPuppetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125D21E792FD900D1A465 /* PCPuppetTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +42,10 @@
 		83A125BE1E78EA3E00D1A465 /* PuppetChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuppetChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A125C21E78EA3E00D1A465 /* PuppetChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuppetChatTests.m; sourceTree = "<group>"; };
 		83A125C41E78EA3E00D1A465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83A125CD1E792AA500D1A465 /* PCClientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCClientTableViewCell.h; sourceTree = "<group>"; };
-		83A125CE1E792AA500D1A465 /* PCClientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCClientTableViewCell.m; sourceTree = "<group>"; };
-		83A125D11E792FD900D1A465 /* PCClientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCClientTableViewController.h; sourceTree = "<group>"; };
-		83A125D21E792FD900D1A465 /* PCClientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCClientTableViewController.m; sourceTree = "<group>"; };
+		83A125CD1E792AA500D1A465 /* PCPuppetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPuppetTableViewCell.h; sourceTree = "<group>"; };
+		83A125CE1E792AA500D1A465 /* PCPuppetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppetTableViewCell.m; sourceTree = "<group>"; };
+		83A125D11E792FD900D1A465 /* PCPuppetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPuppetTableViewController.h; sourceTree = "<group>"; };
+		83A125D21E792FD900D1A465 /* PCPuppetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppetTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +91,10 @@
 				83A125AC1E78EA3E00D1A465 /* AppDelegate.m */,
 				83A125AE1E78EA3E00D1A465 /* ViewController.h */,
 				83A125AF1E78EA3E00D1A465 /* ViewController.m */,
-				83A125D11E792FD900D1A465 /* PCClientTableViewController.h */,
-				83A125D21E792FD900D1A465 /* PCClientTableViewController.m */,
-				83A125CD1E792AA500D1A465 /* PCClientTableViewCell.h */,
-				83A125CE1E792AA500D1A465 /* PCClientTableViewCell.m */,
+				83A125D11E792FD900D1A465 /* PCPuppetTableViewController.h */,
+				83A125D21E792FD900D1A465 /* PCPuppetTableViewController.m */,
+				83A125CD1E792AA500D1A465 /* PCPuppetTableViewCell.h */,
+				83A125CE1E792AA500D1A465 /* PCPuppetTableViewCell.m */,
 				83A125B11E78EA3E00D1A465 /* Main.storyboard */,
 				83A125B41E78EA3E00D1A465 /* Assets.xcassets */,
 				83A125B61E78EA3E00D1A465 /* LaunchScreen.storyboard */,
@@ -228,8 +228,8 @@
 				83A125B01E78EA3E00D1A465 /* ViewController.m in Sources */,
 				83A125AD1E78EA3E00D1A465 /* AppDelegate.m in Sources */,
 				83A125AA1E78EA3E00D1A465 /* main.m in Sources */,
-				83A125CF1E792AA500D1A465 /* PCClientTableViewCell.m in Sources */,
-				83A125D31E792FD900D1A465 /* PCClientTableViewController.m in Sources */,
+				83A125CF1E792AA500D1A465 /* PCPuppetTableViewCell.m in Sources */,
+				83A125D31E792FD900D1A465 /* PCPuppetTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

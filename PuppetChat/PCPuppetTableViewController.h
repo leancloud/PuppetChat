@@ -1,5 +1,5 @@
 //
-//  PCClientTableViewController.h
+//  PCPuppetTableViewController.h
 //  PuppetChat
 //
 //  Created by Tang Tianyong on 3/15/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PCClientTableViewController : UITableViewController
+@interface PCPuppetTableViewController : UITableViewController
 
 @end
