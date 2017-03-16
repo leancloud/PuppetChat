@@ -64,8 +64,11 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
 
 - (void)puppetLogin:(PCPuppet *)puppet {
     AVIMClient *client = puppet.client;
+    AVIMClientOpenOption *option = [[AVIMClientOpenOption alloc] init];
 
-    [client openWithCallback:^(BOOL succeeded, NSError * _Nullable error) {
+    option.force = puppet.forcedLogin;
+
+    [client openWithOption:option callback:^(BOOL succeeded, NSError * _Nullable error) {
         /* TODO */
     }];
 }
