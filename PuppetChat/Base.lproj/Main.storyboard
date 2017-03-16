@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="370"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m3q-Ge-7Ad" id="XgW-xe-9Lq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="369"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puppet ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tep-uy-3xx">
@@ -105,6 +105,7 @@
                                             <state key="normal" title="Chat with Other Puppets"/>
                                             <connections>
                                                 <action selector="chatWithOtherPuppets:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="n8I-qY-8fZ"/>
+                                                <segue destination="7Yq-Uk-ed1" kind="show" id="QMa-97-iuv"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forced Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR5-1M-v1n">
@@ -149,6 +150,7 @@
                                             <state key="normal" title="Show Conversation List"/>
                                             <connections>
                                                 <action selector="showConversationList:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="MFT-zu-mTP"/>
+                                                <segue destination="9zN-xA-JPb" kind="show" identifier="ShowConversationList" id="grH-84-9B1"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -221,6 +223,42 @@
             </objects>
             <point key="canvasLocation" x="1092" y="123.68815592203899"/>
         </scene>
+        <!--Conversation List-->
+        <scene sceneID="Doe-tQ-UsR">
+            <objects>
+                <tableViewController title="Conversation List" id="9zN-xA-JPb" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NVm-RC-PNy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="9zN-xA-JPb" id="hV8-iV-Scv"/>
+                            <outlet property="delegate" destination="9zN-xA-JPb" id="sxd-e4-8uz"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0j-st-VCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3420" y="124"/>
+        </scene>
+        <!--Let's Chat-->
+        <scene sceneID="ABL-EP-k1g">
+            <objects>
+                <tableViewController title="Let's Chat" id="7Yq-Uk-ed1" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vUK-3O-KxN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="7Yq-Uk-ed1" id="lPe-o6-rI7"/>
+                            <outlet property="delegate" destination="7Yq-Uk-ed1" id="fxM-jC-KZs"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywQ-Az-A4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2292" y="595"/>
+        </scene>
         <!--Add Puppet-->
         <scene sceneID="BPl-gC-ac9">
             <objects>
@@ -279,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNh-ve-oi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3313" y="-340"/>
+            <point key="canvasLocation" x="3420" y="-695"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jC5-4H-pfq">
@@ -295,7 +333,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iww-2h-WBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2359" y="-340"/>
+            <point key="canvasLocation" x="2292" y="-320"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T1U-p1-fZq">
