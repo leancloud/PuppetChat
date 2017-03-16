@@ -10,6 +10,8 @@
 
 @interface PCPuppetAddingTableViewController ()
 
+<UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *puppetIdTextField;
 
 @end
@@ -23,7 +25,27 @@
 }
 
 - (IBAction)done:(UIBarButtonItem *)sender {
-    /* TODO */
+    [self finish];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.puppetIdTextField) {
+        [self finish];
+        return NO;
+    }
+
+    return YES;
+}
+
+- (void)finish {
+    PCPuppet *puppet = [[PCPuppet alloc] init];
+
+    [self.puppetIdTextField resignFirstResponder];
+
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (self.puppetCreatedBlock)
+            self.puppetCreatedBlock(puppet);
+    }];
 }
 
 @end

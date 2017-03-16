@@ -7,15 +7,71 @@
 //
 
 #import "PCPuppetTableViewController.h"
+#import "PCPuppetAddingTableViewController.h"
+#import "PCPuppetTableViewCell.h"
+
+static NSString *PCPuppetCellReuseIdentifier   = @"Puppet";
+static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
 
 @interface PCPuppetTableViewController ()
+
+@property (nonatomic, strong) NSMutableArray<PCPuppet *> *puppets;
 
 @end
 
 @implementation PCPuppetTableViewController
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self doInitialize];
+}
+
+- (void)doInitialize {
+    _puppets = [NSMutableArray array];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+- (void)puppetDidCreate:(PCPuppet *)puppet {
+    [self.puppets addObject:puppet];
+
+    NSArray<NSIndexPath *> *indexPaths = @[[NSIndexPath indexPathForRow:self.puppets.count - 1 inSection:0]];
+
+    [self.tableView insertRowsAtIndexPaths:indexPaths
+                          withRowAnimation:UITableViewRowAnimationTop];
+
+    [self.tableView scrollToRowAtIndexPath:indexPaths.firstObject
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:PCPuppetAddingSegueIdentifier]) {
+        UINavigationController *navigator = (UINavigationController *)segue.destinationViewController;
+        PCPuppetAddingTableViewController *viewController = (PCPuppetAddingTableViewController *)navigator.topViewController;
+
+        viewController.puppetCreatedBlock = ^(PCPuppet *puppet) {
+            [self puppetDidCreate:puppet];
+        };
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.puppets.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PCPuppetTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:PCPuppetCellReuseIdentifier
+                                                                       forIndexPath:indexPath];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 370;
 }
 
 @end

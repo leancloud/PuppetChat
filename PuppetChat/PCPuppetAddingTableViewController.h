@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PCPuppet.h"
 
 @interface PCPuppetAddingTableViewController : UIViewController
+
+@property (nonatomic, copy) void(^puppetCreatedBlock)(PCPuppet *puppet);
 
 @end

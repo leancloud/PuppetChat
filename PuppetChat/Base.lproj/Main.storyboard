@@ -198,7 +198,7 @@
                     <navigationItem key="navigationItem" title="Puppet Chat" id="2KT-vf-X0s">
                         <barButtonItem key="rightBarButtonItem" title="Add puppet" id="PPa-Fz-2YF">
                             <connections>
-                                <segue destination="boL-YP-pD3" kind="presentation" id="hSH-9E-ezb"/>
+                                <segue destination="boL-YP-pD3" kind="presentation" identifier="AddPuppet" id="hSH-9E-ezb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -219,27 +219,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the Puppet ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1UM-4Z-MTJ">
-                                <rect key="frame" x="0.0" y="318.5" width="375" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the Puppet ID" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1UM-4Z-MTJ">
+                                <rect key="frame" x="107" y="319" width="252" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zhh-6c-3AC"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WTF-wa-oNh" id="TFd-wS-tfP"/>
+                                </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puppet ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8c-Bc-IcP">
+                                <rect key="frame" x="16" y="323" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1UM-4Z-MTJ" firstAttribute="centerY" secondItem="0uo-QK-zEb" secondAttribute="centerY" id="Puf-FY-nNC"/>
-                            <constraint firstItem="1UM-4Z-MTJ" firstAttribute="centerX" secondItem="0uo-QK-zEb" secondAttribute="centerX" id="pCQ-NI-I7v"/>
-                            <constraint firstItem="1UM-4Z-MTJ" firstAttribute="width" secondItem="0uo-QK-zEb" secondAttribute="width" id="tnr-Ud-Gmn"/>
+                            <constraint firstItem="J8c-Bc-IcP" firstAttribute="centerY" secondItem="0uo-QK-zEb" secondAttribute="centerY" id="SKH-LX-ukj"/>
+                            <constraint firstItem="1UM-4Z-MTJ" firstAttribute="leading" secondItem="J8c-Bc-IcP" secondAttribute="trailing" constant="15" id="UmE-Tn-ACo"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="J8c-Bc-IcP" secondAttribute="leading" id="Vko-6A-CnU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1UM-4Z-MTJ" secondAttribute="trailing" id="eUT-35-rky"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Puppet" id="DaF-L8-ha4">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="W5F-1z-744">
                             <connections>
-                                <action selector="done:" destination="WTF-wa-oNh" id="acB-XR-9Tq"/>
+                                <action selector="done:" destination="WTF-wa-oNh" id="vYc-39-tFR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
