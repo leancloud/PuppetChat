@@ -62,7 +62,7 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <state key="normal" title="Login"/>
                                             <connections>
-                                                <action selector="loginButtonDidClick:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="2ku-CI-Fqd"/>
+                                                <action selector="login:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="CA1-lQ-NPL"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llc-bi-GFc">
@@ -75,7 +75,7 @@
                                                 <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
-                                                <action selector="logoutButtonDidClick:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="Fde-6c-2oe"/>
+                                                <action selector="logout:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="2gX-ZO-6ac"/>
                                             </connections>
                                         </button>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Puppet ID" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQI-YM-GHm">
@@ -103,6 +103,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <state key="normal" title="Chat with Other Puppets"/>
+                                            <connections>
+                                                <action selector="chatWithOtherPuppets:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="n8I-qY-8fZ"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forced Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR5-1M-v1n">
                                             <rect key="frame" x="15" y="78" width="106" height="30"/>
@@ -144,6 +147,9 @@
                                             <rect key="frame" x="159" y="256" width="203" height="34"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <state key="normal" title="Show Conversation List"/>
+                                            <connections>
+                                                <action selector="showConversationList:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="MFT-zu-mTP"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

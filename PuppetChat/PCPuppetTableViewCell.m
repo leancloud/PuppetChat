@@ -35,23 +35,24 @@
     self.puppetStatusLabel.text = self.puppet.statusDescription;
 }
 
-- (IBAction)loginButtonDidClick:(id)sender {
-    if (self.loginAction)
-        self.loginAction(self);
+- (IBAction)login:(UIButton *)sender {
+    if ([self.puppetDelegate respondsToSelector:@selector(puppetLogin:)])
+        [self.puppetDelegate puppetLogin:self.puppet];
 }
 
-- (IBAction)forcedLoginButtonDidClick:(id)sender {
-    if (self.forcedLoginAction)
-        self.forcedLoginAction(self);
+- (IBAction)showConversationList:(UIButton *)sender {
+    if ([self.puppetDelegate respondsToSelector:@selector(puppetShowConversationList:)])
+        [self.puppetDelegate puppetShowConversationList:self.puppet];
 }
 
-- (IBAction)logoutButtonDidClick:(id)sender {
-    if (self.logoutAction)
-        self.logoutAction(self);
+- (IBAction)chatWithOtherPuppets:(UIButton *)sender {
+    if ([self.puppetDelegate respondsToSelector:@selector(puppetChatWithOtherPuppets:)])
+        [self.puppetDelegate puppetChatWithOtherPuppets:self.puppet];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (IBAction)logout:(UIButton *)sender {
+    if ([self.puppetDelegate respondsToSelector:@selector(puppetLogout:)])
+        [self.puppetDelegate puppetLogout:self.puppet];
 }
 
 @end

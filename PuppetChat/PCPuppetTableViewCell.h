@@ -9,16 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "PCPuppet.h"
 
-@class PCPuppetTableViewCell;
+@protocol PCPuppetDelegate <NSObject>
 
-typedef void(^PCPuppetAction)(PCPuppetTableViewCell *puppetTableViewCell);
+- (void)puppetLogin:(PCPuppet *)puppet;
+- (void)puppetShowConversationList:(PCPuppet *)puppet;
+- (void)puppetChatWithOtherPuppets:(PCPuppet *)puppet;
+- (void)puppetLogout:(PCPuppet *)puppet;
+
+@end
+
+@class PCPuppetTableViewCell;
 
 @interface PCPuppetTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) PCPuppet *puppet;
-
-@property (nonatomic, copy) PCPuppetAction loginAction;
-@property (nonatomic, copy) PCPuppetAction forcedLoginAction;
-@property (nonatomic, copy) PCPuppetAction logoutAction;
+@property (nonatomic, strong)   PCPuppet                *puppet;
+@property (nonatomic,   weak)   id<PCPuppetDelegate>     puppetDelegate;
 
 @end

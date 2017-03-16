@@ -15,6 +15,8 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
 
 @interface PCPuppetTableViewController ()
 
+<PCPuppetDelegate>
+
 @property (nonatomic, strong) NSMutableArray<PCPuppet *> *puppets;
 
 @end
@@ -60,6 +62,22 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
     }
 }
 
+- (void)puppetLogin:(PCPuppet *)puppet {
+    /* TODO */
+}
+
+- (void)puppetShowConversationList:(PCPuppet *)puppet {
+    /* TODO */
+}
+
+- (void)puppetChatWithOtherPuppets:(PCPuppet *)puppet {
+    /* TODO */
+}
+
+- (void)puppetLogout:(PCPuppet *)puppet {
+    /* TODO */
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.puppets.count;
 }
@@ -69,6 +87,7 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
                                                                        forIndexPath:indexPath];
     PCPuppet *puppet = self.puppets[indexPath.row];
     cell.puppet = puppet;
+    cell.puppetDelegate = self;
     return cell;
 }
 
