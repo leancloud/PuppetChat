@@ -18,6 +18,8 @@
 		83A125D31E792FD900D1A465 /* PCPuppetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125D21E792FD900D1A465 /* PCPuppetTableViewController.m */; };
 		83A125DD1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125DC1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.m */; };
 		83A125E01E7A3FAA00D1A465 /* PCPuppet.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125DF1E7A3FAA00D1A465 /* PCPuppet.m */; };
+		83A125E31E7A7FED00D1A465 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A125E21E7A7FED00D1A465 /* AVOSCloud.framework */; };
+		83A125E51E7A803700D1A465 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A125E41E7A803700D1A465 /* AVOSCloudIM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		83A125DC1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppetAddingTableViewController.m; sourceTree = "<group>"; };
 		83A125DE1E7A3FAA00D1A465 /* PCPuppet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPuppet.h; sourceTree = "<group>"; };
 		83A125DF1E7A3FAA00D1A465 /* PCPuppet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppet.m; sourceTree = "<group>"; };
+		83A125E21E7A7FED00D1A465 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		83A125E41E7A803700D1A465 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A125E31E7A7FED00D1A465 /* AVOSCloud.framework in Frameworks */,
+				83A125E51E7A803700D1A465 /* AVOSCloudIM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				83A125A71E78EA3E00D1A465 /* PuppetChat */,
+				83A125E11E7A7FED00D1A465 /* Frameworks */,
 				83A125C11E78EA3E00D1A465 /* PuppetChatTests */,
 				83A125A61E78EA3E00D1A465 /* Products */,
 			);
@@ -129,6 +136,15 @@
 				83A125C41E78EA3E00D1A465 /* Info.plist */,
 			);
 			path = PuppetChatTests;
+			sourceTree = "<group>";
+		};
+		83A125E11E7A7FED00D1A465 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83A125E21E7A7FED00D1A465 /* AVOSCloud.framework */,
+				83A125E41E7A803700D1A465 /* AVOSCloudIM.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +394,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y6X8P44TM5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = PuppetChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.leancloud.PuppetChat;
@@ -390,6 +410,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y6X8P44TM5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = PuppetChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.leancloud.PuppetChat;
