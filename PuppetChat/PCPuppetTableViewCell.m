@@ -59,6 +59,18 @@
     self.puppetStatusLabel.text = self.puppet.statusDescription;
 }
 
+- (IBAction)forcedLoginSwitchDidChange:(UISwitch *)sender {
+    self.puppet.forcedLogin = sender.isOn;
+}
+
+- (IBAction)uniqueConversationSwitchDidChange:(UISwitch *)sender {
+    self.puppet.uniqueConversation = sender.isOn;
+}
+
+- (IBAction)transientConversationSwitchDidChange:(UISwitch *)sender {
+    self.puppet.transientConversation = sender.isOn;
+}
+
 - (IBAction)login:(UIButton *)sender {
     if ([self.puppetDelegate respondsToSelector:@selector(puppetLogin:)])
         [self.puppetDelegate puppetLogin:self.puppet];

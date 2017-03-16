@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="370"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m3q-Ge-7Ad" id="XgW-xe-9Lq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="369"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puppet ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tep-uy-3xx">
@@ -137,12 +137,21 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qn3-rB-VQ4">
                                             <rect key="frame" x="313" y="78" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="forcedLoginSwitchDidChange:" destination="m3q-Ge-7Ad" eventType="valueChanged" id="cAE-9a-SHC"/>
+                                            </connections>
                                         </switch>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9LX-tB-uE5">
                                             <rect key="frame" x="313" y="113" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="uniqueConversationSwitchDidChange:" destination="m3q-Ge-7Ad" eventType="valueChanged" id="MOm-jy-Wog"/>
+                                            </connections>
                                         </switch>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rOY-eb-pjg">
                                             <rect key="frame" x="313" y="148" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="transientConversationSwitchDidChange:" destination="m3q-Ge-7Ad" eventType="valueChanged" id="Sd1-Bm-dfc"/>
+                                            </connections>
                                         </switch>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX7-eE-yNI">
                                             <rect key="frame" x="159" y="256" width="203" height="34"/>
