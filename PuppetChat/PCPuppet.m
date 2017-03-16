@@ -35,11 +35,14 @@ NSString *PCPuppetDidChangeNotification = @"PCPuppetDidChangeNotification";
     _statusDescription = [self descriptionForClientStatus:AVIMClientStatusNone];
 }
 
-- (instancetype)initWithPuppetId:(NSString *)puppetId {
+- (instancetype)initWithPuppetId:(NSString *)puppetId
+                  singleLoginTag:(NSString *)singleLoginTag
+{
     self = [self init];
 
     if (self) {
         _puppetId = [puppetId copy];
+        _singleLoginTag = [singleLoginTag copy];
     }
 
     return self;
@@ -64,7 +67,8 @@ NSString *PCPuppetDidChangeNotification = @"PCPuppetDidChangeNotification";
         if (_client)
             return _client;
 
-        _client = [[AVIMClient alloc] initWithClientId:self.puppetId];
+        _client = [[AVIMClient alloc] initWithClientId:self.puppetId
+                                                   tag:self.singleLoginTag];
 
         [self observeStatusOfClient:_client];
     }

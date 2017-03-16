@@ -90,7 +90,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Single Login Tag" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJQ-TU-Eti">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Single Login Tag" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJQ-TU-Eti">
                                             <rect key="frame" x="163" y="43" width="199" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -272,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the Puppet ID" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1UM-4Z-MTJ">
-                                <rect key="frame" x="107" y="319" width="252" height="30"/>
+                                <rect key="frame" x="111" y="219" width="248" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zhh-6c-3AC"/>
                                 </constraints>
@@ -284,19 +284,42 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puppet ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8c-Bc-IcP">
-                                <rect key="frame" x="16" y="323" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="223" width="80" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Single Login Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbU-CM-tN3">
+                                <rect key="frame" x="16" y="260" width="133" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Single Login Tag" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pwX-cZ-2tx">
+                                <rect key="frame" x="164" y="256" width="195" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6wB-nS-h7Q"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WTF-wa-oNh" id="ygn-pW-REb"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1UM-4Z-MTJ" firstAttribute="centerY" secondItem="0uo-QK-zEb" secondAttribute="centerY" id="Puf-FY-nNC"/>
-                            <constraint firstItem="J8c-Bc-IcP" firstAttribute="centerY" secondItem="0uo-QK-zEb" secondAttribute="centerY" id="SKH-LX-ukj"/>
+                            <constraint firstItem="NbU-CM-tN3" firstAttribute="leading" secondItem="J8c-Bc-IcP" secondAttribute="leading" id="3J4-5f-MjY"/>
+                            <constraint firstItem="1UM-4Z-MTJ" firstAttribute="centerY" secondItem="J8c-Bc-IcP" secondAttribute="centerY" id="Qf0-kv-2hn"/>
+                            <constraint firstItem="J8c-Bc-IcP" firstAttribute="centerY" secondItem="0uo-QK-zEb" secondAttribute="centerY" constant="-100" id="SKH-LX-ukj"/>
                             <constraint firstItem="1UM-4Z-MTJ" firstAttribute="leading" secondItem="J8c-Bc-IcP" secondAttribute="trailing" constant="15" id="UmE-Tn-ACo"/>
                             <constraint firstAttribute="leadingMargin" secondItem="J8c-Bc-IcP" secondAttribute="leading" id="Vko-6A-CnU"/>
+                            <constraint firstItem="pwX-cZ-2tx" firstAttribute="leading" secondItem="NbU-CM-tN3" secondAttribute="trailing" constant="15" id="eQc-km-hgw"/>
+                            <constraint firstItem="NbU-CM-tN3" firstAttribute="top" secondItem="J8c-Bc-IcP" secondAttribute="bottom" constant="15" id="eU2-Xl-FUs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1UM-4Z-MTJ" secondAttribute="trailing" id="eUT-35-rky"/>
+                            <constraint firstItem="pwX-cZ-2tx" firstAttribute="centerY" secondItem="NbU-CM-tN3" secondAttribute="centerY" id="fqg-FX-ZpR"/>
+                            <constraint firstItem="pwX-cZ-2tx" firstAttribute="trailing" secondItem="1UM-4Z-MTJ" secondAttribute="trailing" id="g39-xF-OGz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Puppet" id="DaF-L8-ha4">
@@ -313,6 +336,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="puppetIdTextField" destination="1UM-4Z-MTJ" id="iTY-XN-Iq0"/>
+                        <outlet property="singleLoginTagTextField" destination="pwX-cZ-2tx" id="VZi-lc-OAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNh-ve-oi8" userLabel="First Responder" sceneMemberID="firstResponder"/>

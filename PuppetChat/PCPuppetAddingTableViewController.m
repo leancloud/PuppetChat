@@ -13,6 +13,7 @@
 <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *puppetIdTextField;
+@property (weak, nonatomic) IBOutlet UITextField *singleLoginTagTextField;
 
 @end
 
@@ -37,7 +38,9 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == self.puppetIdTextField) {
+    if (textField == self.puppetIdTextField ||
+        textField == self.singleLoginTagTextField)
+    {
         [self finish];
         return NO;
     }
@@ -67,8 +70,10 @@
         return;
 
     NSString *puppetId = self.puppetIdTextField.text;
+    NSString *singleLoginTag = self.singleLoginTagTextField.text;
 
-    PCPuppet *puppet = [[PCPuppet alloc] initWithPuppetId:puppetId];
+    PCPuppet *puppet = [[PCPuppet alloc] initWithPuppetId:puppetId
+                                           singleLoginTag:singleLoginTag];
 
     [self dismissViewControllerAnimated:YES completion:^{
         if (self.puppetCreatedBlock)
