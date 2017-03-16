@@ -37,8 +37,30 @@
     return YES;
 }
 
+- (BOOL)validateBeforeFinish {
+    if (!self.puppetIdTextField.text.length) {
+        UIAlertController *alert = [UIAlertController
+                                    alertControllerWithTitle:@"Invalid Puppet ID"
+                                    message:@"Puppet ID cannot be empty."
+                                    preferredStyle:UIAlertControllerStyleAlert];
+
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+
+        [self presentViewController:alert animated:YES completion:nil];
+
+        return NO;
+    }
+
+    return YES;
+}
+
 - (void)finish {
-    PCPuppet *puppet = [[PCPuppet alloc] init];
+    if (![self validateBeforeFinish])
+        return;
+
+    NSString *puppetId = self.puppetIdTextField.text;
+
+    PCPuppet *puppet = [[PCPuppet alloc] initWithPuppetId:puppetId];
 
     [self.puppetIdTextField resignFirstResponder];
 

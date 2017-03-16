@@ -10,4 +10,28 @@
 
 @implementation PCPuppet
 
+- (instancetype)init {
+    self = [super init];
+
+    if (self) {
+        [self doInitialize];
+    }
+
+    return self;
+}
+
+- (void)doInitialize {
+    _uniqueConversation = YES;
+}
+
+- (instancetype)initWithPuppetId:(NSString *)puppetId {
+    self = [self init];
+
+    if (self) {
+        _puppetId = [puppetId copy];
+    }
+
+    return self;
+}
+
 @end

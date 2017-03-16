@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PCPuppet.h"
 
 @class PCPuppetTableViewCell;
 
 typedef void(^PCPuppetAction)(PCPuppetTableViewCell *puppetTableViewCell);
 
 @interface PCPuppetTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) PCPuppet *puppet;
 
 @property (nonatomic, copy) PCPuppetAction loginAction;
 @property (nonatomic, copy) PCPuppetAction forcedLoginAction;

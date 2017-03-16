@@ -10,9 +10,13 @@
 
 @implementation PCPuppetTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)setPuppet:(PCPuppet *)puppet {
+    _puppet = puppet;
+    [self refreshUI];
+}
+
+- (void)refreshUI {
+    /* TODO */
 }
 
 - (IBAction)loginButtonDidClick:(id)sender {
@@ -32,8 +36,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

@@ -248,7 +248,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Puppet" id="DaF-L8-ha4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="W5F-1z-744">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="W5F-1z-744">
                             <connections>
                                 <action selector="done:" destination="WTF-wa-oNh" id="vYc-39-tFR"/>
                             </connections>
