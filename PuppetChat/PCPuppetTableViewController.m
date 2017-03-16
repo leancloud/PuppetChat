@@ -63,7 +63,11 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
 }
 
 - (void)puppetLogin:(PCPuppet *)puppet {
-    /* TODO */
+    AVIMClient *client = puppet.client;
+
+    [client openWithCallback:^(BOOL succeeded, NSError * _Nullable error) {
+        /* TODO */
+    }];
 }
 
 - (void)puppetShowConversationList:(PCPuppet *)puppet {
@@ -75,7 +79,11 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
 }
 
 - (void)puppetLogout:(PCPuppet *)puppet {
-    /* TODO */
+    AVIMClient *client = puppet.client;
+
+    [client closeWithCallback:^(BOOL succeeded, NSError * _Nullable error) {
+        /* TODO */
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

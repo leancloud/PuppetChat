@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVOSCloudIM/AVOSCloudIM.h>
+
+FOUNDATION_EXPORT NSString *PCPuppetDidChangeNotification;
 
 @interface PCPuppet : NSObject
 
@@ -16,6 +19,7 @@
 @property (nonatomic, assign)               BOOL         uniqueConversation;
 @property (nonatomic, assign)               BOOL         transientConversation;
 @property (nonatomic,   copy, readonly)     NSString    *statusDescription;
+@property (nonatomic, strong, readonly)     AVIMClient  *client;
 
 - (instancetype)initWithPuppetId:(NSString *)puppetId;
 

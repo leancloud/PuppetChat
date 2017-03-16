@@ -21,6 +21,30 @@
 
 @implementation PCPuppetTableViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self doInitialize];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)doInitialize {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(puppetDidChange:)
+                                                 name:PCPuppetDidChangeNotification
+                                               object:nil];
+}
+
+- (void)puppetDidChange:(NSNotification *)notification {
+    id object = notification.object;
+
+    if (object == self.puppet) {
+        [self refreshUI];
+    }
+}
+
 - (void)setPuppet:(PCPuppet *)puppet {
     _puppet = puppet;
     [self refreshUI];

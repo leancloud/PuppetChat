@@ -20,6 +20,8 @@
 		83A125E01E7A3FAA00D1A465 /* PCPuppet.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125DF1E7A3FAA00D1A465 /* PCPuppet.m */; };
 		83A125E31E7A7FED00D1A465 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A125E21E7A7FED00D1A465 /* AVOSCloud.framework */; };
 		83A125E51E7A803700D1A465 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A125E41E7A803700D1A465 /* AVOSCloudIM.framework */; };
+		83F1F1F61E7A863500009A24 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1F1F51E7A863500009A24 /* libsqlite3.tbd */; };
+		83F1F1F81E7A864100009A24 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1F1F71E7A864100009A24 /* libicucore.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		83A125DF1E7A3FAA00D1A465 /* PCPuppet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppet.m; sourceTree = "<group>"; };
 		83A125E21E7A7FED00D1A465 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 		83A125E41E7A803700D1A465 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
+		83F1F1F51E7A863500009A24 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		83F1F1F71E7A864100009A24 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F1F1F61E7A863500009A24 /* libsqlite3.tbd in Frameworks */,
+				83F1F1F81E7A864100009A24 /* libicucore.tbd in Frameworks */,
 				83A125E31E7A7FED00D1A465 /* AVOSCloud.framework in Frameworks */,
 				83A125E51E7A803700D1A465 /* AVOSCloudIM.framework in Frameworks */,
 			);
@@ -141,6 +147,8 @@
 		83A125E11E7A7FED00D1A465 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83F1F1F71E7A864100009A24 /* libicucore.tbd */,
+				83F1F1F51E7A863500009A24 /* libsqlite3.tbd */,
 				83A125E21E7A7FED00D1A465 /* AVOSCloud.framework */,
 				83A125E41E7A803700D1A465 /* AVOSCloudIM.framework */,
 			);
@@ -400,6 +408,7 @@
 				);
 				INFOPLIST_FILE = PuppetChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.leancloud.PuppetChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +425,7 @@
 				);
 				INFOPLIST_FILE = PuppetChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.leancloud.PuppetChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
