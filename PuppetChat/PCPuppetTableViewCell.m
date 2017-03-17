@@ -58,7 +58,17 @@
         self.uniqueConversationSwitch.on = self.puppet.uniqueConversation;
         self.transientConversationSwitch.on = self.puppet.transientConversation;
         self.puppetStatusLabel.text = self.puppet.statusDescription;
+
+        [self updateBackgroundColorForClientStatus:self.puppet.client.status];
     });
+}
+
+- (void)updateBackgroundColorForClientStatus:(AVIMClientStatus)status {
+    if (status == AVIMClientStatusOpened) {
+        self.contentView.backgroundColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:0.1];
+    } else {
+        self.contentView.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 - (IBAction)forcedLoginSwitchDidChange:(UISwitch *)sender {
