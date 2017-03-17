@@ -51,12 +51,14 @@
 }
 
 - (void)refreshUI {
-    self.puppetIdTextField.text = self.puppet.puppetId;
-    self.singleLoginTagTextField.text = self.puppet.singleLoginTag;
-    self.forcedLoginSwitch.on = self.puppet.forcedLogin;
-    self.uniqueConversationSwitch.on = self.puppet.uniqueConversation;
-    self.transientConversationSwitch.on = self.puppet.transientConversation;
-    self.puppetStatusLabel.text = self.puppet.statusDescription;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.puppetIdTextField.text = self.puppet.puppetId;
+        self.singleLoginTagTextField.text = self.puppet.singleLoginTag;
+        self.forcedLoginSwitch.on = self.puppet.forcedLogin;
+        self.uniqueConversationSwitch.on = self.puppet.uniqueConversation;
+        self.transientConversationSwitch.on = self.puppet.transientConversation;
+        self.puppetStatusLabel.text = self.puppet.statusDescription;
+    });
 }
 
 - (IBAction)forcedLoginSwitchDidChange:(UISwitch *)sender {
