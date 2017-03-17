@@ -1,0 +1,3 @@
+[submodule "leancloud-objc-sdk"]
+	path = leancloud-objc-sdk
+	url = git@github.com:leancloud/objc-sdk.git
