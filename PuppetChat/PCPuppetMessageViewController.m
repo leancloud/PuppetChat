@@ -8,7 +8,6 @@
 
 #import "PCPuppetMessageViewController.h"
 #import "JSQMessages.h"
-#import "JSQMessage.h"
 
 @interface AVIMMessage (PCPuppet)
 
@@ -19,9 +18,11 @@
 @implementation AVIMMessage (PCPuppet)
 
 - (JSQMessage *)JSQMessage {
+    NSString *text = self.content ?: @"";
+
     return [JSQMessage messageWithSenderId:self.clientId
                                displayName:self.clientId
-                                      text:self.content ?: @""];
+                                      text:text];
 }
 
 @end
@@ -29,9 +30,11 @@
 @implementation AVIMTextMessage (PCPuppet)
 
 - (JSQMessage *)JSQMessage {
+    NSString *text = self.text ?: @"";
+
     return [JSQMessage messageWithSenderId:self.clientId
                                displayName:self.clientId
-                                      text:self.text ?: @""];
+                                      text:text];
 }
 
 @end
@@ -97,7 +100,6 @@
 
     [self.conversaiton sendMessage:message callback:^(BOOL succeeded, NSError * _Nullable error) {
         /* TODO */
-        NSLog(@"hello, world");
     }];
 
     [self.messages addObject:message];
