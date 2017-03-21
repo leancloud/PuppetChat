@@ -36,7 +36,7 @@
 
 @end
 
-@interface PCPuppetMessageViewController ()
+@interface PCPuppetMessageViewController () <AVIMClientDelegate>
 
 @property (nonatomic, strong) NSMutableArray<AVIMMessage *> *messages;
 
@@ -79,6 +79,7 @@
 
 - (void)setConversaiton:(AVIMConversation *)conversaiton {
     _conversaiton = conversaiton;
+    _conversaiton.imClient.delegate = self;
 
     NSString *clientId = conversaiton.clientId;
 
@@ -102,6 +103,12 @@
     [self.messages addObject:message];
 
     [self finishSendingMessage];
+}
+
+- (void)conversation:(AVIMConversation *)conversation didReceiveTypedMessage:(AVIMTypedMessage *)message {
+    [self.messages addObject:message];
+
+    [self finishReceivingMessage];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
