@@ -9,9 +9,13 @@
 #import "PCPuppetTableViewController.h"
 #import "PCPuppetAddingTableViewController.h"
 #import "PCPuppetTableViewCell.h"
+#import "PCPuppetChatTableViewController.h"
 
 static NSString *PCPuppetCellReuseIdentifier   = @"Puppet";
 static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
+static NSString *PCPuppetChattingWithOthersSegueIdentifier = @"ChatWithOthers";
+static NSString *PCPuppetKeyCreator = @"PCPuppetKeyCreator";
+static NSString *PCPuppetKeyOthers = @"PCPuppetKeyOthers";
 
 @interface PCPuppetTableViewController ()
 
@@ -59,6 +63,16 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
         viewController.puppetCreatedBlock = ^(PCPuppet *puppet) {
             [self puppetDidCreate:puppet];
         };
+    } else if ([segue.identifier isEqualToString:PCPuppetChattingWithOthersSegueIdentifier]) {
+        NSDictionary *userInfo = sender;
+
+        PCPuppet *creator = userInfo[PCPuppetKeyCreator];
+        NSArray<PCPuppet *> *others = userInfo[PCPuppetKeyOthers];
+
+        PCPuppetChatTableViewController *viewController = (PCPuppetChatTableViewController *)segue.destinationViewController;
+
+        viewController.creator = creator;
+        viewController.others = others;
     }
 }
 
@@ -78,7 +92,14 @@ static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
 }
 
 - (void)puppetChatWithOtherPuppets:(PCPuppet *)puppet {
-    /* TODO */
+    PCPuppet *creator = puppet;
+    NSMutableArray<PCPuppet *> *others = [self.puppets mutableCopy];
+    [others removeObject:creator];
+
+    [self performSegueWithIdentifier:PCPuppetChattingWithOthersSegueIdentifier sender:@{
+        PCPuppetKeyCreator: creator,
+        PCPuppetKeyOthers: others
+    }];
 }
 
 - (void)puppetLogout:(PCPuppet *)puppet {

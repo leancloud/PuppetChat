@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83762BA41E81056200F9B9D9 /* PCPuppetMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83762BA21E81056200F9B9D9 /* PCPuppetMessageViewController.m */; };
 		83A125AA1E78EA3E00D1A465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125A91E78EA3E00D1A465 /* main.m */; };
 		83A125AD1E78EA3E00D1A465 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125AC1E78EA3E00D1A465 /* AppDelegate.m */; };
 		83A125B01E78EA3E00D1A465 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125AF1E78EA3E00D1A465 /* ViewController.m */; };
@@ -18,6 +19,7 @@
 		83A125D31E792FD900D1A465 /* PCPuppetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125D21E792FD900D1A465 /* PCPuppetTableViewController.m */; };
 		83A125DD1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125DC1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.m */; };
 		83A125E01E7A3FAA00D1A465 /* PCPuppet.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125DF1E7A3FAA00D1A465 /* PCPuppet.m */; };
+		83CCDFD31E7F8298004BE149 /* PCPuppetChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDFD21E7F8298004BE149 /* PCPuppetChatTableViewController.m */; };
 		83F1F1F61E7A863500009A24 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1F1F51E7A863500009A24 /* libsqlite3.tbd */; };
 		83F1F1F81E7A864100009A24 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1F1F71E7A864100009A24 /* libicucore.tbd */; };
 		83F1F21D1E7B818100009A24 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1F2081E7B816C00009A24 /* AVOSCloud.framework */; };
@@ -159,6 +161,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83762BA11E81056200F9B9D9 /* PCPuppetMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPuppetMessageViewController.h; sourceTree = "<group>"; };
+		83762BA21E81056200F9B9D9 /* PCPuppetMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppetMessageViewController.m; sourceTree = "<group>"; };
 		83A125A51E78EA3E00D1A465 /* PuppetChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppetChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A125A91E78EA3E00D1A465 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83A125AB1E78EA3E00D1A465 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 		83A125DC1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppetAddingTableViewController.m; sourceTree = "<group>"; };
 		83A125DE1E7A3FAA00D1A465 /* PCPuppet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPuppet.h; sourceTree = "<group>"; };
 		83A125DF1E7A3FAA00D1A465 /* PCPuppet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppet.m; sourceTree = "<group>"; };
+		83CCDFD11E7F8298004BE149 /* PCPuppetChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPuppetChatTableViewController.h; sourceTree = "<group>"; };
+		83CCDFD21E7F8298004BE149 /* PCPuppetChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppetChatTableViewController.m; sourceTree = "<group>"; };
 		83F1F1F51E7A863500009A24 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		83F1F1F71E7A864100009A24 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		83F1F1F91E7B816C00009A24 /* AVOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AVOS.xcodeproj; path = "leancloud-objc-sdk/AVOS/AVOS.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -337,6 +343,10 @@
 				83A125CE1E792AA500D1A465 /* PCPuppetTableViewCell.m */,
 				83A125DB1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.h */,
 				83A125DC1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.m */,
+				83CCDFD11E7F8298004BE149 /* PCPuppetChatTableViewController.h */,
+				83CCDFD21E7F8298004BE149 /* PCPuppetChatTableViewController.m */,
+				83762BA11E81056200F9B9D9 /* PCPuppetMessageViewController.h */,
+				83762BA21E81056200F9B9D9 /* PCPuppetMessageViewController.m */,
 				83A125B11E78EA3E00D1A465 /* Main.storyboard */,
 				83A125B41E78EA3E00D1A465 /* Assets.xcassets */,
 				83A125B61E78EA3E00D1A465 /* LaunchScreen.storyboard */,
@@ -774,6 +784,7 @@
 				83F1F29F1E7B9B7900009A24 /* JSQMediaItem.m in Sources */,
 				83F1F2A51E7B9B7900009A24 /* JSQMessagesCellTextView.m in Sources */,
 				83F1F2A31E7B9B7900009A24 /* JSQPhotoMediaItem.m in Sources */,
+				83CCDFD31E7F8298004BE149 /* PCPuppetChatTableViewController.m in Sources */,
 				83F1F29C1E7B9B7900009A24 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
 				83F1F2A21E7B9B7900009A24 /* JSQMessagesBubbleImage.m in Sources */,
 				83F1F2AE1E7B9B7900009A24 /* JSQMessagesLabel.m in Sources */,
@@ -791,6 +802,7 @@
 				83F1F2B41E7B9B7900009A24 /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
 				83F1F2901E7B9B7900009A24 /* JSQMessagesKeyboardController.m in Sources */,
 				83F1F2961E7B9B7900009A24 /* JSQMessagesTimestampFormatter.m in Sources */,
+				83762BA41E81056200F9B9D9 /* PCPuppetMessageViewController.m in Sources */,
 				83F1F2AF1E7B9B7900009A24 /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
 				83F1F2AD1E7B9B7900009A24 /* JSQMessagesInputToolbar.m in Sources */,
 				83F1F2A11E7B9B7900009A24 /* JSQMessagesAvatarImage.m in Sources */,
