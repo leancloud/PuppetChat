@@ -40,6 +40,7 @@ static NSString *PCPuppetKeyOthers = @"PCPuppetKeyOthers";
     [super viewDidLoad];
 
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
 }
 
 - (void)puppetDidCreate:(PCPuppet *)puppet {
@@ -125,6 +126,16 @@ static NSString *PCPuppetKeyOthers = @"PCPuppetKeyOthers";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 370;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        /* TODO */
+    }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
