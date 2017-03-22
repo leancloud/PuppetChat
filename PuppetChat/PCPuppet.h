@@ -11,7 +11,7 @@
 
 FOUNDATION_EXPORT NSString *PCPuppetDidChangeNotification;
 
-@interface PCPuppet : NSObject
+@interface PCPuppet : NSObject <NSCoding>
 
 @property (nonatomic,   copy, readonly)     NSString    *puppetId;
 @property (nonatomic,   copy, readonly)     NSString    *singleLoginTag;

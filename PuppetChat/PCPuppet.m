@@ -30,6 +30,28 @@ NSString *PCPuppetDidChangeNotification = @"PCPuppetDidChangeNotification";
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+
+    if (self) {
+        _puppetId = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(puppetId))];
+        _singleLoginTag = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(singleLoginTag))];
+        _forcedLogin = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(forcedLogin))];
+        _uniqueConversation = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(uniqueConversation))];
+        _transientConversation = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(transientConversation))];
+    }
+
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.puppetId forKey:NSStringFromSelector(@selector(puppetId))];
+    [aCoder encodeObject:self.singleLoginTag forKey:NSStringFromSelector(@selector(singleLoginTag))];
+    [aCoder encodeBool:self.forcedLogin forKey:NSStringFromSelector(@selector(forcedLogin))];
+    [aCoder encodeBool:self.uniqueConversation forKey:NSStringFromSelector(@selector(uniqueConversation))];
+    [aCoder encodeBool:self.transientConversation forKey:NSStringFromSelector(@selector(transientConversation))];
+}
+
 - (void)doInitialize {
     _uniqueConversation = YES;
     _statusDescription = [self descriptionForClientStatus:AVIMClientStatusNone];
