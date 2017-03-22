@@ -24,7 +24,9 @@
 		834940581E822B5700D31D94 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 834940451E822B5700D31D94 /* UIImageView+WebCache.m */; };
 		834940591E822B5700D31D94 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 834940471E822B5700D31D94 /* UIView+WebCache.m */; };
 		8349405A1E822B5700D31D94 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 834940491E822B5700D31D94 /* UIView+WebCacheOperation.m */; };
+		8349406A1E825B7100D31D94 /* PCPuppetChatTableSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 834940691E825B7100D31D94 /* PCPuppetChatTableSectionHeaderView.m */; };
 		83762BA41E81056200F9B9D9 /* PCPuppetMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83762BA21E81056200F9B9D9 /* PCPuppetMessageViewController.m */; };
+		838760F11E82662D00C4F1D7 /* PCPuppetAvatarGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 838760F01E82662D00C4F1D7 /* PCPuppetAvatarGenerator.m */; };
 		83A125AA1E78EA3E00D1A465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125A91E78EA3E00D1A465 /* main.m */; };
 		83A125AD1E78EA3E00D1A465 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125AC1E78EA3E00D1A465 /* AppDelegate.m */; };
 		83A125B01E78EA3E00D1A465 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A125AF1E78EA3E00D1A465 /* ViewController.m */; };
@@ -213,8 +215,12 @@
 		834940471E822B5700D31D94 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		834940481E822B5700D31D94 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		834940491E822B5700D31D94 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		834940681E825B7100D31D94 /* PCPuppetChatTableSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPuppetChatTableSectionHeaderView.h; sourceTree = "<group>"; };
+		834940691E825B7100D31D94 /* PCPuppetChatTableSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppetChatTableSectionHeaderView.m; sourceTree = "<group>"; };
 		83762BA11E81056200F9B9D9 /* PCPuppetMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPuppetMessageViewController.h; sourceTree = "<group>"; };
 		83762BA21E81056200F9B9D9 /* PCPuppetMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppetMessageViewController.m; sourceTree = "<group>"; };
+		838760EF1E82662D00C4F1D7 /* PCPuppetAvatarGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPuppetAvatarGenerator.h; sourceTree = "<group>"; };
+		838760F01E82662D00C4F1D7 /* PCPuppetAvatarGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPuppetAvatarGenerator.m; sourceTree = "<group>"; };
 		83A125A51E78EA3E00D1A465 /* PuppetChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppetChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A125A91E78EA3E00D1A465 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83A125AB1E78EA3E00D1A465 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -439,8 +445,12 @@
 				83A125DC1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.m */,
 				83CCDFD11E7F8298004BE149 /* PCPuppetChatTableViewController.h */,
 				83CCDFD21E7F8298004BE149 /* PCPuppetChatTableViewController.m */,
+				834940681E825B7100D31D94 /* PCPuppetChatTableSectionHeaderView.h */,
+				834940691E825B7100D31D94 /* PCPuppetChatTableSectionHeaderView.m */,
 				83762BA11E81056200F9B9D9 /* PCPuppetMessageViewController.h */,
 				83762BA21E81056200F9B9D9 /* PCPuppetMessageViewController.m */,
+				838760EF1E82662D00C4F1D7 /* PCPuppetAvatarGenerator.h */,
+				838760F01E82662D00C4F1D7 /* PCPuppetAvatarGenerator.m */,
 				83A125B11E78EA3E00D1A465 /* Main.storyboard */,
 				83A125B41E78EA3E00D1A465 /* Assets.xcassets */,
 				83A125B61E78EA3E00D1A465 /* LaunchScreen.storyboard */,
@@ -882,6 +892,7 @@
 				83A125AA1E78EA3E00D1A465 /* main.m in Sources */,
 				83F1F29F1E7B9B7900009A24 /* JSQMediaItem.m in Sources */,
 				83F1F2A51E7B9B7900009A24 /* JSQMessagesCellTextView.m in Sources */,
+				838760F11E82662D00C4F1D7 /* PCPuppetAvatarGenerator.m in Sources */,
 				83F1F2A31E7B9B7900009A24 /* JSQPhotoMediaItem.m in Sources */,
 				83CCDFD31E7F8298004BE149 /* PCPuppetChatTableViewController.m in Sources */,
 				834940591E822B5700D31D94 /* UIView+WebCache.m in Sources */,
@@ -890,6 +901,7 @@
 				83F1F2AE1E7B9B7900009A24 /* JSQMessagesLabel.m in Sources */,
 				83F1F2931E7B9B7900009A24 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				83F1F2891E7B9B7900009A24 /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
+				8349406A1E825B7100D31D94 /* PCPuppetChatTableSectionHeaderView.m in Sources */,
 				834940521E822B5700D31D94 /* SDWebImageManager.m in Sources */,
 				83F1F2981E7B9B7900009A24 /* JSQAudioMediaViewAttributes.m in Sources */,
 				83A125DD1E7A37DE00D1A465 /* PCPuppetAddingTableViewController.m in Sources */,

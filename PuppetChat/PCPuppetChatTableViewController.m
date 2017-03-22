@@ -8,6 +8,9 @@
 
 #import "PCPuppetChatTableViewController.h"
 #import "PCPuppetMessageViewController.h"
+#import "PCPuppetChatTableSectionHeaderView.h"
+#import "UIImageView+WebCache.h"
+#import "PCPuppetAvatarGenerator.h"
 
 const static CGFloat PCPuppetChatCellHeight = 200;
 
@@ -154,29 +157,40 @@ const static CGFloat PCPuppetChatCellHeight = 200;
 #pragma mark - UITableView Delegate & DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1 + self.others.count;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-    case 0:
-        return @"Creator";
-    case 1:
-        return @"Other Puppets";
-    default:
-        return nil;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"SectionHeader"];
+    PCPuppetChatTableSectionHeaderView *sectionHeader = (PCPuppetChatTableSectionHeaderView *)view;
+
+    if (!sectionHeader) {
+        sectionHeader = [[PCPuppetChatTableSectionHeaderView alloc] initWithReuseIdentifier:@"SectionHeader"];
     }
+
+    if (section == 0) {
+        NSString *puppetId = self.creator.puppetId;
+        sectionHeader.textLabel.text = puppetId;
+        [sectionHeader.avatarImageView sd_setImageWithURL:[NSURL URLWithString:[PCPuppetAvatarGenerator identiconURLStringForId:puppetId]]
+                                         placeholderImage:nil
+                                                completed:nil];
+    } else {
+        NSString *puppetId = self.others[section - 1].puppetId;
+        sectionHeader.textLabel.text = puppetId;
+        [sectionHeader.avatarImageView sd_setImageWithURL:[NSURL URLWithString:[PCPuppetAvatarGenerator identiconURLStringForId:puppetId]]
+                                         placeholderImage:nil
+                                                completed:nil];
+    }
+
+    return sectionHeader;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-    case 0:
-        return 1;
-    case 1:
-        return self.others.count;
-    default:
-        return 0;
-    }
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -186,15 +200,10 @@ const static CGFloat PCPuppetChatCellHeight = 200;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PCPuppetMessageViewController *messageVC;
 
-    switch (indexPath.section) {
-    case 0:
+    if (indexPath.section == 0) {
         messageVC = self.creatorMessageVC;
-        break;
-    case 1:
-        messageVC = self.otherMessageVCs[indexPath.row];
-        break;
-    default:
-        break;
+    } else {
+        messageVC = self.otherMessageVCs[indexPath.section - 1];
     }
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];

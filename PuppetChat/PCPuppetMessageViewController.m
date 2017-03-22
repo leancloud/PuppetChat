@@ -9,22 +9,7 @@
 #import "PCPuppetMessageViewController.h"
 #import "JSQMessages.h"
 #import "UIImageView+WebCache.h"
-#import <CommonCrypto/CommonCrypto.h>
-
-NS_INLINE
-NSString *MD5EncodedString(NSString *string) {
-    const char* input = [string UTF8String];
-    unsigned char result[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(input, (CC_LONG)strlen(input), result);
-
-    NSMutableString *digest = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-
-    for (NSInteger i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
-        [digest appendFormat:@"%02x", result[i]];
-    }
-
-    return digest;
-}
+#import "PCPuppetAvatarGenerator.h"
 
 @interface AVIMMessage (PCPuppet)
 
@@ -40,13 +25,6 @@ NSString *MD5EncodedString(NSString *string) {
     return [JSQMessage messageWithSenderId:self.clientId
                                displayName:self.clientId
                                       text:text];
-}
-
-- (NSString *)identiconAvatarURLString {
-    NSString *MD5EncodedClientId = MD5EncodedString(self.clientId);
-    NSString *URLString = [NSString stringWithFormat:@"https://cn.gravatar.com/avatar/%@?d=identicon", MD5EncodedClientId];
-
-    return URLString;
 }
 
 @end
@@ -151,7 +129,7 @@ NSString *MD5EncodedString(NSString *string) {
 
     AVIMMessage *message = self.messages[indexPath.item];
 
-    [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:[message identiconAvatarURLString]]
+    [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:[PCPuppetAvatarGenerator identiconURLStringForId:message.clientId]]
                             placeholderImage:nil
                                    completed:nil];
 
