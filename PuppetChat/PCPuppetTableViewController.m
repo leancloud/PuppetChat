@@ -18,6 +18,8 @@ static NSString *PCPuppetChattingWithOthersSegueIdentifier = @"ChatWithOthers";
 static NSString *PCPuppetKeyCreator = @"PCPuppetKeyCreator";
 static NSString *PCPuppetKeyOthers = @"PCPuppetKeyOthers";
 
+const static CGFloat PCPuppetCellHeight = 370;
+
 @interface PCPuppetTableViewController ()
 
 <PCPuppetDelegate>
@@ -135,7 +137,7 @@ static NSString *PCPuppetKeyOthers = @"PCPuppetKeyOthers";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 370;
+    return PCPuppetCellHeight;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
