@@ -12,7 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "PCPuppetAvatarGenerator.h"
 
-const static CGFloat PCPuppetChatCellHeight = 200;
+const static CGFloat PCPuppetChatCellHeight = 250;
 
 @interface AVIMClient ()
 
