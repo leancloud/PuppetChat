@@ -211,6 +211,7 @@ const static CGFloat PCPuppetChatCellHeight = 250;
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.contentView.clipsToBounds = YES;
     }
 
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
