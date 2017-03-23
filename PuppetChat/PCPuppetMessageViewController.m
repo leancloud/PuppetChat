@@ -75,6 +75,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.clipsToBounds = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
