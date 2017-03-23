@@ -10,6 +10,7 @@
 #import "PCPuppetAddingTableViewController.h"
 #import "PCPuppetTableViewCell.h"
 #import "PCPuppetChatTableViewController.h"
+#import "PCPuppetCenter.h"
 
 static NSString *PCPuppetCellReuseIdentifier   = @"Puppet";
 static NSString *PCPuppetAddingSegueIdentifier = @"AddPuppet";
@@ -33,7 +34,8 @@ static NSString *PCPuppetKeyOthers = @"PCPuppetKeyOthers";
 }
 
 - (void)doInitialize {
-    _puppets = [NSMutableArray array];
+    NSArray<PCPuppet *> *puppets = [[PCPuppetCenter sharedInstance] fetchAllPuppets];
+    _puppets = [NSMutableArray arrayWithArray:puppets];
 }
 
 - (void)viewDidLoad {
@@ -111,6 +113,14 @@ static NSString *PCPuppetKeyOthers = @"PCPuppetKeyOthers";
     }];
 }
 
+- (void)deletePuppetAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    PCPuppet *puppet = self.puppets[row];
+
+    [self.puppets removeObjectAtIndex:row];
+    [[PCPuppetCenter sharedInstance] deletePuppet:puppet];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.puppets.count;
 }
@@ -134,7 +144,10 @@ static NSString *PCPuppetKeyOthers = @"PCPuppetKeyOthers";
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        /* TODO */
+        [self deletePuppetAtIndexPath:indexPath];
+
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath]
+                              withRowAnimation:UITableViewRowAnimationTop];
     }
 }
 

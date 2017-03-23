@@ -1,27 +1,25 @@
 //
-//  PCPuppet.h
+//  PCPuppet+CoreDataClass.h
 //  PuppetChat
 //
-//  Created by Tang Tianyong on 3/16/17.
+//  Created by Tang Tianyong on 3/23/17.
 //  Copyright © 2017 Tianyong Tang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 #import <AVOSCloudIM/AVOSCloudIM.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXPORT NSString *PCPuppetDidChangeNotification;
 
-@interface PCPuppet : NSObject <NSCoding>
+@interface PCPuppet : NSManagedObject
 
-@property (nonatomic,   copy, readonly)     NSString    *puppetId;
-@property (nonatomic,   copy, readonly)     NSString    *singleLoginTag;
-@property (nonatomic, assign)               BOOL         forcedLogin;
-@property (nonatomic, assign)               BOOL         uniqueConversation;
-@property (nonatomic, assign)               BOOL         transientConversation;
-@property (nonatomic,   copy, readonly)     NSString    *statusDescription;
-@property (nonatomic, strong, readonly)     AVIMClient  *client;
-
-- (instancetype)initWithPuppetId:(NSString *)puppetId
-                  singleLoginTag:(NSString *)singleLoginTag;
+@property (nonatomic, strong, readonly) AVIMClient *client;
+@property (nonatomic,   copy, readonly) NSString   *statusDescription;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "PCPuppet+CoreDataProperties.h"

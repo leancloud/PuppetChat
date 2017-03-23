@@ -7,6 +7,7 @@
 //
 
 #import "PCPuppetAddingTableViewController.h"
+#import "PCPuppetCenter.h"
 
 @interface PCPuppetAddingTableViewController ()
 
@@ -72,8 +73,11 @@
     NSString *puppetId = self.puppetIdTextField.text;
     NSString *singleLoginTag = self.singleLoginTagTextField.text;
 
-    PCPuppet *puppet = [[PCPuppet alloc] initWithPuppetId:puppetId
-                                           singleLoginTag:singleLoginTag];
+    PCPuppet *puppet = [[PCPuppetCenter sharedInstance] createPuppetWithId:puppetId
+                                                            singleLoginTag:singleLoginTag];
+
+    if (!puppet)
+        return;
 
     [self dismissViewControllerAnimated:YES completion:^{
         if (self.puppetCreatedBlock)

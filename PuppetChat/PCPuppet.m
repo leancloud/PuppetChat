@@ -1,8 +1,8 @@
 //
-//  PCPuppet.m
+//  PCPuppet+CoreDataClass.m
 //  PuppetChat
 //
-//  Created by Tang Tianyong on 3/16/17.
+//  Created by Tang Tianyong on 3/23/17.
 //  Copyright © 2017 Tianyong Tang. All rights reserved.
 //
 
@@ -10,65 +10,10 @@
 
 NSString *PCPuppetDidChangeNotification = @"PCPuppetDidChangeNotification";
 
-@interface PCPuppet ()
-
-@property (nonatomic, copy) NSString *statusDescription;
-
-@end
-
 @implementation PCPuppet
 
 @synthesize client = _client;
-
-- (instancetype)init {
-    self = [super init];
-
-    if (self) {
-        [self doInitialize];
-    }
-
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super init];
-
-    if (self) {
-        _puppetId = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(puppetId))];
-        _singleLoginTag = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(singleLoginTag))];
-        _forcedLogin = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(forcedLogin))];
-        _uniqueConversation = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(uniqueConversation))];
-        _transientConversation = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(transientConversation))];
-    }
-
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.puppetId forKey:NSStringFromSelector(@selector(puppetId))];
-    [aCoder encodeObject:self.singleLoginTag forKey:NSStringFromSelector(@selector(singleLoginTag))];
-    [aCoder encodeBool:self.forcedLogin forKey:NSStringFromSelector(@selector(forcedLogin))];
-    [aCoder encodeBool:self.uniqueConversation forKey:NSStringFromSelector(@selector(uniqueConversation))];
-    [aCoder encodeBool:self.transientConversation forKey:NSStringFromSelector(@selector(transientConversation))];
-}
-
-- (void)doInitialize {
-    _uniqueConversation = YES;
-    _statusDescription = [self descriptionForClientStatus:AVIMClientStatusNone];
-}
-
-- (instancetype)initWithPuppetId:(NSString *)puppetId
-                  singleLoginTag:(NSString *)singleLoginTag
-{
-    self = [self init];
-
-    if (self) {
-        _puppetId = [puppetId copy];
-        _singleLoginTag = [singleLoginTag copy];
-    }
-
-    return self;
-}
+@synthesize statusDescription = _statusDescription;
 
 - (void)dealloc {
     [_client removeObserver:self forKeyPath:@"status"];
@@ -96,6 +41,14 @@ NSString *PCPuppetDidChangeNotification = @"PCPuppetDidChangeNotification";
     }
 
     return _client;
+}
+
+- (NSString *)statusDescription {
+    return _statusDescription;
+}
+
+- (void)setStatusDescription:(NSString * _Nonnull)statusDescription {
+    _statusDescription = [statusDescription copy];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath

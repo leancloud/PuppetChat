@@ -79,8 +79,13 @@
     if (!persistentStoreURL)
         return nil;
 
+    NSDictionary *options = @{
+        NSMigratePersistentStoresAutomaticallyOption: @(YES),
+        NSInferMappingModelAutomaticallyOption: @(YES)
+    };
+
     NSError *error = nil;
-    [coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:persistentStoreURL options:nil error:&error];
+    [coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:persistentStoreURL options:options error:&error];
 
     if (error)
         return nil;
@@ -95,6 +100,37 @@
         _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         _managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator;
     }
+}
+
+- (void)save {
+    [self.managedObjectContext save:NULL];
+}
+
+- (PCPuppet *)createPuppetWithId:(NSString *)puppetId
+                  singleLoginTag:(NSString *)singleLoginTag
+{
+    NSString *entityName = NSStringFromClass([PCPuppet class]);
+    PCPuppet *puppet = [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                                     inManagedObjectContext:self.managedObjectContext];
+
+    puppet.puppetId = puppetId;
+    puppet.singleLoginTag = singleLoginTag;
+
+    [self save];
+
+    return puppet;
+}
+
+- (NSArray<PCPuppet *> *)fetchAllPuppets {
+    NSFetchRequest *fetchRequest = [PCPuppet fetchRequest];
+    NSArray<PCPuppet *> *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:NULL];
+
+    return results;
+}
+
+- (void)deletePuppet:(PCPuppet *)puppet {
+    [self.managedObjectContext deleteObject:puppet];
+    [self save];
 }
 
 @end
