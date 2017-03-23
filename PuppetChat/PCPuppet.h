@@ -18,6 +18,8 @@ FOUNDATION_EXPORT NSString *PCPuppetDidChangeNotification;
 @property (nonatomic, strong, readonly) AVIMClient *client;
 @property (nonatomic,   copy, readonly) NSString   *statusDescription;
 
+- (void)save;
+
 @end
 
 NS_ASSUME_NONNULL_END

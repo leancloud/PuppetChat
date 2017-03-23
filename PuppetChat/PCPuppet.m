@@ -80,4 +80,8 @@ NSString *PCPuppetDidChangeNotification = @"PCPuppetDidChangeNotification";
     }
 }
 
+- (void)save {
+    [self.managedObjectContext save:NULL];
+}
+
 @end

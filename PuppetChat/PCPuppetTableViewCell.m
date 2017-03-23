@@ -73,14 +73,17 @@
 
 - (IBAction)forcedLoginSwitchDidChange:(UISwitch *)sender {
     self.puppet.forcedLogin = sender.isOn;
+    [self.puppet save];
 }
 
 - (IBAction)uniqueConversationSwitchDidChange:(UISwitch *)sender {
     self.puppet.uniqueConversation = sender.isOn;
+    [self.puppet save];
 }
 
 - (IBAction)transientConversationSwitchDidChange:(UISwitch *)sender {
     self.puppet.transientConversation = sender.isOn;
+    [self.puppet save];
 }
 
 - (IBAction)login:(UIButton *)sender {
