@@ -77,10 +77,10 @@ const static NSUInteger PCPuppetMessageQueryBatchSize = 20;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.showLoadEarlierMessagesHeader = YES;
     self.view.clipsToBounds = YES;
 
-    [self loadLatestMessagesFromCache];
-    [self fetchLatestMessages];
+    [self loadLatestMessages];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -98,23 +98,58 @@ const static NSUInteger PCPuppetMessageQueryBatchSize = 20;
     self.senderDisplayName = clientId;
 }
 
+- (void)loadLatestMessages {
+    [self loadLatestMessagesFromCache];
+    [self fetchLatestMessages];
+}
+
 - (void)loadLatestMessagesFromCache {
     NSArray *messages = [self.conversaiton queryMessagesFromCacheWithLimit:PCPuppetMessageQueryBatchSize];
     [self latestMessagesDidLoad:messages];
 }
 
 - (void)fetchLatestMessages {
-    [self.conversaiton
-     queryMessagesWithLimit:PCPuppetMessageQueryBatchSize
-     callback:^(NSArray * _Nullable messages, NSError * _Nullable error) {
-         if (!error && messages)
-             [self latestMessagesDidLoad:messages];
-     }];
+    [self.conversaiton queryMessagesWithLimit:PCPuppetMessageQueryBatchSize
+                                     callback:^(NSArray * _Nullable messages, NSError * _Nullable error) {
+                                         if (!error && messages)
+                                             [self latestMessagesDidLoad:messages];
+                                     }];
 }
 
 - (void)latestMessagesDidLoad:(NSArray<AVIMMessage *> *)messages {
     self.messages = [NSMutableArray arrayWithArray:messages];
     [self finishReceivingMessage];
+}
+
+- (void)loadEarlierMessagesBeforeMessage:(AVIMMessage *)message {
+    [self.conversaiton queryMessagesBeforeId:message.messageId
+                                   timestamp:message.sendTimestamp
+                                       limit:PCPuppetMessageQueryBatchSize
+                                    callback:^(NSArray * _Nullable messages, NSError * _Nullable error) {
+                                        if (!error && messages)
+                                            [self earlierMessagesDidFetch:messages before:message];
+                                    }];
+}
+
+- (void)earlierMessagesDidFetch:(NSArray<AVIMMessage *> *)messages before:(AVIMMessage *)message {
+    NSIndexSet *indexSet;
+    NSUInteger index = [self.messages indexOfObject:message];
+
+    if (index != NSNotFound) {
+        indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(index, messages.count)];
+    } else {
+        indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, messages.count)];
+    }
+
+    [self.messages insertObjects:messages atIndexes:indexSet];
+
+    [self finishReceivingMessageWithoutScrollingToBottom];
+}
+
+- (void)finishReceivingMessageWithoutScrollingToBottom {
+    self.automaticallyScrollsToMostRecentMessage = NO;
+    [self finishReceivingMessage];
+    self.automaticallyScrollsToMostRecentMessage = YES;
 }
 
 - (void)didPressSendButton:(UIButton *)button
@@ -174,6 +209,16 @@ const static NSUInteger PCPuppetMessageQueryBatchSize = 20;
 
 - (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
+}
+
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView header:(JSQMessagesLoadEarlierHeaderView *)headerView didTapLoadEarlierMessagesButton:(UIButton *)sender {
+    AVIMMessage *earlistMessage = [self.messages firstObject];
+
+    if (earlistMessage) {
+        [self loadEarlierMessagesBeforeMessage:earlistMessage];
+    } else {
+        [self loadLatestMessages];
+    }
 }
 
 @end
