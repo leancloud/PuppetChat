@@ -44,11 +44,7 @@ NSString *PCPuppetDidChangeNotification = @"PCPuppetDidChangeNotification";
 }
 
 - (NSString *)statusDescription {
-    return _statusDescription;
-}
-
-- (void)setStatusDescription:(NSString * _Nonnull)statusDescription {
-    _statusDescription = [statusDescription copy];
+    return [self descriptionForClientStatus:self.client.status];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -57,8 +53,6 @@ NSString *PCPuppetDidChangeNotification = @"PCPuppetDidChangeNotification";
                        context:(void *)context
 {
     if (object == self.client) {
-        AVIMClientStatus clientStatus = [change[NSKeyValueChangeNewKey] integerValue];
-        self.statusDescription = [self descriptionForClientStatus:clientStatus];
         [self postChangeNotification];
     }
 }
