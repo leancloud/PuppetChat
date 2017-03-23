@@ -86,22 +86,52 @@
     [self.puppet save];
 }
 
-- (IBAction)login:(UIButton *)sender {
+- (IBAction)showActions:(UIButton *)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Puppet Actions"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Login" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self login];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Show Conversation List" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self showConversationList];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Chat with Other Puppets" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self chatWithOtherPuppets];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Logout" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self logout];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        /* Do nothing. */
+    }]];
+
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert
+                                                                                 animated:YES
+                                                                               completion:nil];
+}
+
+- (void)login {
     if ([self.puppetDelegate respondsToSelector:@selector(puppetLogin:)])
         [self.puppetDelegate puppetLogin:self.puppet];
 }
 
-- (IBAction)showConversationList:(UIButton *)sender {
+- (void)showConversationList {
     if ([self.puppetDelegate respondsToSelector:@selector(puppetShowConversationList:)])
         [self.puppetDelegate puppetShowConversationList:self.puppet];
 }
 
-- (IBAction)chatWithOtherPuppets:(UIButton *)sender {
+- (void)chatWithOtherPuppets {
     if ([self.puppetDelegate respondsToSelector:@selector(puppetChatWithOtherPuppets:)])
         [self.puppetDelegate puppetChatWithOtherPuppets:self.puppet];
 }
 
-- (IBAction)logout:(UIButton *)sender {
+- (void)logout {
     if ([self.puppetDelegate respondsToSelector:@selector(puppetLogout:)])
         [self.puppetDelegate puppetLogout:self.puppet];
 }

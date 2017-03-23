@@ -18,7 +18,7 @@ static NSString *PCPuppetChattingWithOthersSegueIdentifier = @"ChatWithOthers";
 static NSString *PCPuppetKeyCreator = @"PCPuppetKeyCreator";
 static NSString *PCPuppetKeyOthers = @"PCPuppetKeyOthers";
 
-const static CGFloat PCPuppetCellHeight = 370;
+const static CGFloat PCPuppetCellHeight = 270;
 
 @interface PCPuppetTableViewController ()
 

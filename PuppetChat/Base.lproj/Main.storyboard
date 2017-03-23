@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Puppet" rowHeight="370" id="m3q-Ge-7Ad" customClass="PCPuppetTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="370"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Puppet" rowHeight="270" id="m3q-Ge-7Ad" customClass="PCPuppetTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="270"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m3q-Ge-7Ad" id="XgW-xe-9Lq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puppet ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tep-uy-3xx">
@@ -54,30 +54,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Che-nR-lGh">
-                                            <rect key="frame" x="314" y="154" width="48" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="cPw-QD-tW6"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <state key="normal" title="Login"/>
-                                            <connections>
-                                                <action selector="login:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="CA1-lQ-NPL"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llc-bi-GFc">
-                                            <rect key="frame" x="305" y="328" width="57" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="2zQ-Ug-3ey"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="Logout">
-                                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="logout:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="2gX-ZO-6ac"/>
-                                            </connections>
-                                        </button>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Puppet ID" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQI-YM-GHm">
                                             <rect key="frame" x="110" y="8" width="252" height="30"/>
                                             <nil key="textColor"/>
@@ -96,17 +72,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM5-Jh-pDy">
-                                            <rect key="frame" x="275" y="298" width="87" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="rkK-wd-gDu"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <state key="normal" title="Let's Chat"/>
-                                            <connections>
-                                                <action selector="chatWithOtherPuppets:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="n8I-qY-8fZ"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forced Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR5-1M-v1n">
                                             <rect key="frame" x="15" y="113" width="106" height="30"/>
                                             <constraints>
@@ -117,7 +82,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unique Conversation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGA-kv-1jg">
-                                            <rect key="frame" x="15" y="222" width="168.5" height="30"/>
+                                            <rect key="frame" x="15" y="148" width="168.5" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="zK5-cr-zbu"/>
                                             </constraints>
@@ -126,7 +91,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transient Conversation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUr-tj-Ctd">
-                                            <rect key="frame" x="15" y="257" width="186.5" height="30"/>
+                                            <rect key="frame" x="15" y="183" width="186.5" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="mAP-dq-MqO"/>
                                             </constraints>
@@ -141,27 +106,23 @@
                                             </connections>
                                         </switch>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9LX-tB-uE5">
-                                            <rect key="frame" x="313" y="222" width="51" height="31"/>
+                                            <rect key="frame" x="313" y="148" width="51" height="31"/>
                                             <connections>
                                                 <action selector="uniqueConversationSwitchDidChange:" destination="m3q-Ge-7Ad" eventType="valueChanged" id="MOm-jy-Wog"/>
                                             </connections>
                                         </switch>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rOY-eb-pjg">
-                                            <rect key="frame" x="313" y="257" width="51" height="31"/>
+                                            <rect key="frame" x="313" y="183" width="51" height="31"/>
                                             <connections>
                                                 <action selector="transientConversationSwitchDidChange:" destination="m3q-Ge-7Ad" eventType="valueChanged" id="Sd1-Bm-dfc"/>
                                             </connections>
                                         </switch>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX7-eE-yNI">
-                                            <rect key="frame" x="159" y="184" width="203" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="NKQ-b3-nWY"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <state key="normal" title="Show Conversation List"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTm-tY-Bjc">
+                                            <rect key="frame" x="15" y="221" width="347" height="38"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <state key="normal" title="Actions"/>
                                             <connections>
-                                                <action selector="showConversationList:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="MFT-zu-mTP"/>
-                                                <segue destination="9zN-xA-JPb" kind="show" identifier="ShowConversationList" id="grH-84-9B1"/>
+                                                <action selector="showActions:" destination="m3q-Ge-7Ad" eventType="touchUpInside" id="B65-aI-ui4"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -170,6 +131,7 @@
                                         <constraint firstItem="9LX-tB-uE5" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="2fZ-cA-BRu"/>
                                         <constraint firstItem="2yY-Aa-dSo" firstAttribute="leading" secondItem="PUr-tj-Ctd" secondAttribute="leading" id="2mG-tB-lcq"/>
                                         <constraint firstItem="NJQ-TU-Eti" firstAttribute="leading" secondItem="Sic-xL-wA3" secondAttribute="trailing" constant="15" id="48k-a9-zDK"/>
+                                        <constraint firstItem="VGA-kv-1jg" firstAttribute="top" secondItem="aR5-1M-v1n" secondAttribute="bottom" constant="5" id="4xC-j3-FIe"/>
                                         <constraint firstItem="aR5-1M-v1n" firstAttribute="top" secondItem="2yY-Aa-dSo" secondAttribute="bottom" constant="5" id="6Rn-H1-U0T"/>
                                         <constraint firstItem="UQI-YM-GHm" firstAttribute="leading" secondItem="Tep-uy-3xx" secondAttribute="trailing" constant="15" id="8tn-Y3-MXx"/>
                                         <constraint firstItem="Qn3-rB-VQ4" firstAttribute="centerY" secondItem="aR5-1M-v1n" secondAttribute="centerY" id="9fg-gK-Gzx"/>
@@ -179,29 +141,23 @@
                                         <constraint firstItem="Iib-Ze-pr6" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="ESr-4y-BzK"/>
                                         <constraint firstItem="UQI-YM-GHm" firstAttribute="centerY" secondItem="Tep-uy-3xx" secondAttribute="centerY" id="Er4-p0-HFL"/>
                                         <constraint firstItem="aR5-1M-v1n" firstAttribute="leading" secondItem="Tep-uy-3xx" secondAttribute="leading" id="F7Y-Fy-m5k"/>
-                                        <constraint firstItem="Che-nR-lGh" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="G8T-uO-MBe"/>
                                         <constraint firstItem="Sic-xL-wA3" firstAttribute="leading" secondItem="Tep-uy-3xx" secondAttribute="leading" id="GXZ-yR-KLE"/>
-                                        <constraint firstItem="EX7-eE-yNI" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="JLY-W3-PTO"/>
                                         <constraint firstItem="Tep-uy-3xx" firstAttribute="leading" secondItem="XgW-xe-9Lq" secondAttribute="leading" constant="15" id="KUs-QJ-6MW"/>
-                                        <constraint firstItem="VGA-kv-1jg" firstAttribute="top" secondItem="EX7-eE-yNI" secondAttribute="bottom" constant="8" id="KlK-4u-xgL"/>
                                         <constraint firstItem="9LX-tB-uE5" firstAttribute="centerY" secondItem="VGA-kv-1jg" secondAttribute="centerY" id="Ksy-5F-Uc2"/>
                                         <constraint firstItem="rOY-eb-pjg" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="NmI-GX-g9b"/>
                                         <constraint firstItem="2yY-Aa-dSo" firstAttribute="top" secondItem="Sic-xL-wA3" secondAttribute="bottom" constant="5" id="PcK-er-Bm1"/>
                                         <constraint firstAttribute="topMargin" secondItem="Tep-uy-3xx" secondAttribute="top" id="Pyu-zX-C2R"/>
                                         <constraint firstItem="Qn3-rB-VQ4" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="R7J-Eg-WJM"/>
-                                        <constraint firstItem="llc-bi-GFc" firstAttribute="top" secondItem="WM5-Jh-pDy" secondAttribute="bottom" id="VAT-uR-hFc"/>
-                                        <constraint firstItem="Che-nR-lGh" firstAttribute="top" secondItem="Qn3-rB-VQ4" secondAttribute="bottom" constant="10" id="XkM-Z1-rEd"/>
                                         <constraint firstItem="Iib-Ze-pr6" firstAttribute="leading" secondItem="2yY-Aa-dSo" secondAttribute="trailing" constant="15" id="Z4l-pC-2T3"/>
                                         <constraint firstItem="UQI-YM-GHm" firstAttribute="height" secondItem="Tep-uy-3xx" secondAttribute="height" id="Zfx-JG-YTl"/>
-                                        <constraint firstItem="WM5-Jh-pDy" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="afV-cK-F9F"/>
                                         <constraint firstItem="2yY-Aa-dSo" firstAttribute="leading" secondItem="Tep-uy-3xx" secondAttribute="leading" id="bE0-nS-TaK"/>
-                                        <constraint firstItem="llc-bi-GFc" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="hCo-CR-ajo"/>
+                                        <constraint firstItem="PTm-tY-Bjc" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="hzV-AQ-bJY"/>
+                                        <constraint firstItem="PTm-tY-Bjc" firstAttribute="top" secondItem="PUr-tj-Ctd" secondAttribute="bottom" constant="8" id="isE-xA-Dxm"/>
                                         <constraint firstItem="NJQ-TU-Eti" firstAttribute="trailing" secondItem="UQI-YM-GHm" secondAttribute="trailing" id="jdC-Tw-TlY"/>
                                         <constraint firstItem="VGA-kv-1jg" firstAttribute="leading" secondItem="aR5-1M-v1n" secondAttribute="leading" id="jf1-Px-PzP"/>
                                         <constraint firstItem="Iib-Ze-pr6" firstAttribute="height" secondItem="2yY-Aa-dSo" secondAttribute="height" id="kuT-sK-65M"/>
-                                        <constraint firstItem="WM5-Jh-pDy" firstAttribute="top" secondItem="rOY-eb-pjg" secondAttribute="bottom" constant="10" id="miy-Rg-Hru"/>
+                                        <constraint firstItem="PTm-tY-Bjc" firstAttribute="leading" secondItem="Tep-uy-3xx" secondAttribute="leading" id="qQ6-Om-Boc"/>
                                         <constraint firstItem="PUr-tj-Ctd" firstAttribute="leading" secondItem="VGA-kv-1jg" secondAttribute="leading" id="rMD-d2-C1y"/>
-                                        <constraint firstItem="EX7-eE-yNI" firstAttribute="top" secondItem="Che-nR-lGh" secondAttribute="bottom" id="tgu-jE-6l0"/>
                                         <constraint firstItem="NJQ-TU-Eti" firstAttribute="height" secondItem="Sic-xL-wA3" secondAttribute="height" id="ufM-ML-Xga"/>
                                         <constraint firstItem="PUr-tj-Ctd" firstAttribute="top" secondItem="VGA-kv-1jg" secondAttribute="bottom" constant="5" id="wSA-wh-4RT"/>
                                         <constraint firstItem="Iib-Ze-pr6" firstAttribute="centerY" secondItem="2yY-Aa-dSo" secondAttribute="centerY" id="xiY-So-N08"/>
@@ -231,6 +187,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="7Yq-Uk-ed1" kind="show" identifier="ChatWithOthers" id="eHo-37-kQL"/>
+                        <segue destination="9zN-xA-JPb" kind="show" identifier="ShowConversationList" id="qjQ-pK-tvp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuX-UU-Szm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -253,7 +210,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0j-st-VCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3420" y="124"/>
+            <point key="canvasLocation" x="2657" y="596"/>
         </scene>
         <!--Let's Chat-->
         <scene sceneID="ABL-EP-k1g">
@@ -271,7 +228,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywQ-Az-A4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292" y="595"/>
+            <point key="canvasLocation" x="2657" y="-191"/>
         </scene>
         <!--Add Puppet-->
         <scene sceneID="BPl-gC-ac9">
@@ -355,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNh-ve-oi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3420" y="-695"/>
+            <point key="canvasLocation" x="3750" y="-982"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jC5-4H-pfq">
@@ -371,7 +328,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iww-2h-WBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292" y="-320"/>
+            <point key="canvasLocation" x="2657" y="-981"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T1U-p1-fZq">
