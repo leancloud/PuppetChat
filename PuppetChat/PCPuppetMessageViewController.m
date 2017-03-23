@@ -11,6 +11,8 @@
 #import "UIImageView+WebCache.h"
 #import "PCPuppetAvatarGenerator.h"
 
+const static NSUInteger PCPuppetMessageQueryBatchSize = 20;
+
 @interface AVIMMessage (PCPuppet)
 
 @property (nonatomic, strong, readonly) JSQMessage *JSQMessage;
@@ -76,6 +78,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.clipsToBounds = YES;
+
+    [self loadLatestMessagesFromCache];
+    [self fetchLatestMessages];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -91,6 +96,25 @@
 
     self.senderId = clientId;
     self.senderDisplayName = clientId;
+}
+
+- (void)loadLatestMessagesFromCache {
+    NSArray *messages = [self.conversaiton queryMessagesFromCacheWithLimit:PCPuppetMessageQueryBatchSize];
+    [self latestMessagesDidLoad:messages];
+}
+
+- (void)fetchLatestMessages {
+    [self.conversaiton
+     queryMessagesWithLimit:PCPuppetMessageQueryBatchSize
+     callback:^(NSArray * _Nullable messages, NSError * _Nullable error) {
+         if (!error && messages)
+             [self latestMessagesDidLoad:messages];
+     }];
+}
+
+- (void)latestMessagesDidLoad:(NSArray<AVIMMessage *> *)messages {
+    self.messages = [NSMutableArray arrayWithArray:messages];
+    [self finishReceivingMessage];
 }
 
 - (void)didPressSendButton:(UIButton *)button
