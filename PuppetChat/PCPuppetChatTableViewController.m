@@ -58,12 +58,45 @@ const static CGFloat PCPuppetChatCellHeight = 250;
 }
 
 - (void)createConversation {
-    AVIMConversationOption options;
-    NSMutableArray *members = [NSMutableArray array];
+    NSArray *members = [self normalizedMemberIds];
 
-    for (PCPuppet *other in self.others) {
-        [members addObject:other.client.clientId];
+    BOOL unique = self.creator.uniqueConversation && !self.creator.transientConversation;
+
+    if (unique) {
+        AVIMConversationQuery *query = [self.creator.client conversationQuery];
+
+        [query whereKey:@"m" containedIn:members];
+        [query whereKey:@"m" sizeEqualTo:members.count];
+
+        [query findConversationsWithCallback:^(NSArray * _Nullable conversations, NSError * _Nullable error) {
+            AVIMConversation *conversation = conversations.firstObject;
+
+            if (conversation) {
+                [self firstConversationDidCreate:conversation];
+            } else {
+                [self createNewConversationForMembers:members];
+            }
+        }];
+    } else {
+        [self createNewConversationForMembers:members];
     }
+}
+
+- (NSArray<NSString *> *)normalizedMemberIds {
+    NSMutableSet *memberSet = [NSMutableSet set];
+
+    [memberSet addObject:self.creator.client.clientId];
+
+    for (PCPuppet *other in self.others)
+        [memberSet addObject:other.client.clientId];
+
+    NSArray *members = [[memberSet allObjects] sortedArrayUsingSelector:@selector(compare:)];
+
+    return members;
+}
+
+- (void)createNewConversationForMembers:(NSArray<NSString *> *)members {
+    AVIMConversationOption options;
 
     if (self.creator.uniqueConversation)
         options |= AVIMConversationOptionUnique;
